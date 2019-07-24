@@ -10,13 +10,14 @@
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
   <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/stylesheets/style.css">
+  <script src="lib/jquery/jquery.min.js"></script>
 
   <!-- Libraries CSS Files -->
   <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="lib/animate/animate.min.css" rel="stylesheet">
   <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
   <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
 </head>
 
 <body>
@@ -27,20 +28,20 @@
       <img src="/images/logo.png" width= "220px" height="50px">
       <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
         <ul class="navbar-nav">
-          <li class="nav-item <%= locals.home %>">
-            <a class="nav-link" href="/">Home</a>
+          <li class="nav-item">
+            <a class="nav-link active" href="/">Home</a>
           </li>
-          <li class="nav-item <%= locals.appliance %>">
+          <li class="nav-item">
             <a class="nav-link" href="/appliance">Appliances</a>
           </li>
-          <li class="nav-item <%= locals.about %>">
+          <li class="nav-item">
             <a class="nav-link" href="/about">About Us</a>
           </li>
-          <li class="nav-item <%= locals.contact %>">
+          <li class="nav-item">
             <a class="nav-link" href="/contact">Contact</a>
           </li>
         </ul>
-        <a class="toggle-nav" href="#">&#9776;</a>
+        <!-- <a class="toggle-nav" href="#">&#9776;</a> -->
       </div>
     </div>
   </nav>
