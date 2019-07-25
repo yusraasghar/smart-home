@@ -7,9 +7,10 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const app = express();
-
+// var app = require('http').createServer(handler);
 // SocketIO.io
 const server = app.listen(7860);
+//const socket = require('socket.io')(app);
 const socket = require('socket.io');
 const io = socket.listen(server);
 
@@ -114,23 +115,23 @@ app.get('/count', function (req, res) {
 
 // Socket.io
 io.on("connection", socket => {
-  //  console.log("New client connected" + socket.id);
+    console.log("New client connected" + socket.id);
     //console.log(socket);
-  // Returning the initial data of food menu from FoodItems collection
-    socket.on("initial_data", () => {
-      collection_foodItems.find({}).then(docs => {
-        io.sockets.emit("get_data", docs);
-      });
-    });
+    // Returning the initial data of food menu from FoodItems collection
+    // socket.on("initial_data", () => {
+    //   collection_foodItems.find({}).then(docs => {
+    //     io.sockets.emit("get_data", docs);
+    //   });
+    // });
   // Placing the order, gets called from /src/main/PlaceOrder.js of Frontend
-    socket.on("putOrder", order => {
-      collection_foodItems
-        .update({ _id: order._id }, { $inc: { ordQty: order.order } })
-        .then(updatedDoc => {
-          // Emitting event to update the Kitchen opened across the devices with the realtime order values
-          io.sockets.emit("change_data");
-        });
+    socket.on("status", (item) => {
+      console.log('here');
+      io.sockets.emit('status', item);
     });
+          // Emitting event to update the Kitchen opened across the devices with the realtime order values
+          //io.sockets.emit("change_data");
+       // });
+    //});
   // Order completion, gets called from /src/main/Kitchen.js
     socket.on("mark_done", id => {
       collection_foodItems
@@ -233,4 +234,4 @@ app.use(function(err, req, res, next) {
 });
 
 
-module.exports = app;
+module.exports = {app,server};
