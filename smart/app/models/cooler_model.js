@@ -2,10 +2,10 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const coolerSchema = new Schema({
+const CoolerSchema = new Schema({
   name: String,
   switch : Boolean,
   temperature : Number
 });
 
-module.exports = mongoose.model('Air Conditioner', coolerSchema);
+module.exports = mongoose.model('Air Conditioner', CoolerSchema);

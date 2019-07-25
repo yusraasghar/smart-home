@@ -3,7 +3,7 @@
 const express = require('express');
 // eslint-disable-next-line new-cap
 const router = express.Router();
-// const Switch = require('../app/models/television-model');
+// const Switch = require('../app/models/television_model');
 // let devices;
 
 /* GET home page. */
@@ -13,10 +13,10 @@ router.get('/', function(req, res, next) {
 
 // television Schema Create
 // const television = new Switch({
-//   name: 'Samsung',
-//   switch : true,
-//   volume : '35',  
-//   channel : '14'
+//   name:  "BEDROOM(R) TV",
+//   switch:true,
+//   volume:35,
+//   channel:14
 // });
 // television.save().then(()=>{
 //   console.log('saved !');
