@@ -96,7 +96,7 @@
             <p>Switch On / Switch Off</p>
             <!--Switch--> 
             <div class="onoffswitch2">
-                <input type="hidden" name="switch" value="false"/>
+                <input type="hidden" class="off" name="switch" value="false"/>
                 <input type="checkbox" name="switch" class="onoffswitch2-checkbox" id="myonoffswitch21"  value="true" checked>
                 <label class="onoffswitch2-label" for="myonoffswitch21">
                     <span class="onoffswitch2-inner"></span>
@@ -529,8 +529,32 @@
 
 <script src="/socket.io/socket.io.js"></script>
       <script>
+        let item;
 
    $(document).ready(function () {
+    //$("[name=switch]").bootstrapSwitch();
+    //$("[name=switch]").bootstrapSwitch('state', true);
+    //$("[name=switch]").bootstrapSwitch('state', false);
+    $( document ).ready(function() {
+    $("#myonoffswitch21").bootstrapSwitch();
+    $( ".onoffswitch2-checkbox" ).click(function() {
+        $("#myonoffswitch21").bootstrapSwitch('setState', true);
+    });
+    $( ".off" ).click(function() {
+        $("#myonoffswitch21").bootstrapSwitch('setState', false);
+    });
+});
+// sir yeh commented code me koi error console pe nhi arha aur is se bhi itemData me console horha hai..
+// $( document ).ready(function() {
+//     $(".onoffswitch2-checkbox").bootstrapSwitch();
+//     $( ".save-btn" ).click(function() {
+//         $(".onoffswitch2-checkbox").bootstrapSwitch('setState', true);
+//     });
+//     $( ".save-btn" ).click(function() {
+//         $(".onoffswitch2-checkbox").bootstrapSwitch('setState', false);
+//     });
+// });
+
             $('.save-btn').click(function(e) {
               const frm = $(e.target).closest("form");
                 e.preventDefault();
@@ -549,10 +573,10 @@
             //   socket.emit('disconnected', { my: 'data' });
             // });
 
-            const change = $('.save-btn');
-            const item = $('.onoffswitch2-checkbox');
+            const btn = $('.save-btn');
+            item = $('.onoffswitch2-checkbox');
             // const frrm = $(e.target).closest("form");
-            change.click(function(e){
+            btn.click(function(e){
               const frm = $(e.target).closest("form");
               alert($(e.target).closest("form").data('id'));
               socket.emit('status',{
@@ -564,10 +588,39 @@
             //   socket.emit('changing')
             // });
             socket.on('status', function(data){
-          console.log(data),
-          alert('here')
-          //the other actual code will go here..
+              //console.log(data),
+              //alert('here')
+         // item.innerHtml += data.deviceId + data.item;f
+          //the actual code will go here..
+          $('[data-id="'+data.deviceId+'"]');
+          function qToArr(q)
+          {
+              q = decodeURIComponent((q).replace(/\+/g, '%20'));
+              arr = {};
+              var a = q.split(/&(?!amp;)/g);
+              for (x in a)
+              {
+                  var pair = a[x].split('=');
+                  arr[pair[0]] = pair[1];
+              }
+              //console.log('dushfsuigh');
+              return arr;
+          }
+
+          const itemData = qToArr(data.item);
+              if(data.item === 'switch=true'){
+              console.log('dsf')
+              console.log($('[data-id="'+data.deviceId+'"]').find('[name='+itemData.keys[0]+']').val(false));
+            }else{
+              console.log(itemData);
+              //.bootstrapSwitch('state', true)
+              console.log($('[data-id="'+data.deviceId+'"]').find(item).val(false));
+            }
+
             })
+            // item.addEventListener('keypress',function(){
+            //   socket.emit('changing')
+             //});
    });
         </script>
 
