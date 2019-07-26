@@ -532,18 +532,18 @@
         let item;
 
    $(document).ready(function () {
-    //$("[name=switch]").bootstrapSwitch();
+   // $("[name=switch]").bootstrapSwitch();
     //$("[name=switch]").bootstrapSwitch('state', true);
     //$("[name=switch]").bootstrapSwitch('state', false);
-    $( document ).ready(function() {
-    $("#myonoffswitch21").bootstrapSwitch();
-    $( ".onoffswitch2-checkbox" ).click(function() {
-        $("#myonoffswitch21").bootstrapSwitch('setState', true);
-    });
-    $( ".off" ).click(function() {
-        $("#myonoffswitch21").bootstrapSwitch('setState', false);
-    });
-});
+    // $( document ).ready(function() {
+    // $("#myonoffswitch21").bootstrapSwitch();
+    // $( ".onoffswitch2-checkbox" ).click(function() {
+    //     $("#myonoffswitch21").bootstrapSwitch('setState', true);
+    // });
+    // $( ".off" ).click(function() {
+    //     $("#myonoffswitch21").bootstrapSwitch('setState', false);
+    // });
+// });
 // sir yeh commented code me koi error console pe nhi arha aur is se bhi itemData me console horha hai..
 // $( document ).ready(function() {
 //     $(".onoffswitch2-checkbox").bootstrapSwitch();
@@ -608,13 +608,16 @@
           }
 
           const itemData = qToArr(data.item);
-              if(data.item === 'switch=true'){
-              console.log('dsf')
-              console.log($('[data-id="'+data.deviceId+'"]').find('[name='+itemData.keys[0]+']').val(false));
+              if(data.item === 'switch=false'){
+              console.log('dsf');
+             // console.log($('[data-id="'+data.deviceId+'"]').find('[name='+itemData.keys[0]+']').val(false));
+              $("[name=switch]").bootstrapSwitch('state', false);
             }else{
               console.log(itemData);
+              $("[name=switch]").bootstrapSwitch('state', true);
               //.bootstrapSwitch('state', true)
-              console.log($('[data-id="'+data.deviceId+'"]').find(item).val(false));
+             // console.log($('[data-id="'+data.deviceId+'"]').find(item).val(false));
+             
             }
 
             })
