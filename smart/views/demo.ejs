@@ -1,0 +1,576 @@
+`<% include header.ejs %>
+
+<% 
+function getItem(id){
+  return formsData.filter(obj => {
+    return obj._id == id;
+  })[0];
+} 
+%> 
+
+<!--/ Floor Plan /-->
+<img id="floor" src="/images/slide.jpg" width="1216" height="878" alt="backround">
+<!--/ Floor plan end /-->
+
+ <!-- Dots on devices -->
+ <div class="container">
+  <!-- Trigger the modal with a button -->
+  <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open</button> -->
+  <div id="container"> 
+      <div class="hover-dot" data-toggle="modal" data-target="#myModal1"></div>
+    </div> 
+  <!--Light Modal -->
+  <div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">TV LOUNGE LAMP </h4>
+          <button type="button" class="close" data-dismiss="modal">×</button>
+        </div>
+        <form method= 'POST' action ='/item/save/5d390f1213edba0294481b82' data-id='5d390f1213edba0294481b82'>
+        <div class="modal-body">
+          <p>Switch On / Switch Off</p>
+          <!--Switch--> 
+          <div class="onoffswitch2">
+              <input type="hidden" class="off" name="switch" value="false"/>
+    <input type="checkbox" name="switch" class="onoffswitch2-checkbox" id="myonoffswitch21"  value="true" 
+      <% if(getItem('5d390f1213edba0294481b82').switch === 'true' ){ %>
+        checked
+        <% } %>
+    >
+              <label class="onoffswitch2-label" for="myonoffswitch21">
+                  <span class="onoffswitch2-inner"></span>
+                  <span class="onoffswitch2-switch"></span>
+              </label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary " data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-secondary save-btn" id="save" data-dismiss="modal">Save Changes</button>
+        </div>
+      </form>
+      </div>
+      
+    </div>
+  </div>
+ 
+  
+</div>
+</div>
+<!--Light-left-->
+<div class="container">
+      <div class="hover-dot hover-dot-light-left" data-toggle="modal" data-target="#myModal2"></div>
+   
+  <!--Light Modal -->
+  <div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">BEDROOM(L) LEFT LAMP</h4>           
+           <button type="button" class="close" data-dismiss="modal">×</button>
+
+        </div>
+        <form method= 'POST' action ='/item/save/5d39109f4a6e6b228895c6d3' data-id='5d39109f4a6e6b228895c6d3'>
+        <div class="modal-body">
+          <p>Switch On / Switch Off </p>
+          <!--Switch-->
+          <div class="onoffswitch2">
+              <input type="hidden" name="switch" value="false"/>
+              <input type="checkbox" name="switch" class="onoffswitch2-checkbox" value="true" id="myonoffswitch22"
+              <% if(getItem('5d39109f4a6e6b228895c6d3').switch === 'true' ){ %>
+                checked
+                <% } %>
+              >
+              <label class="onoffswitch2-label" for="myonoffswitch22">
+                  <span class="onoffswitch2-inner"></span>
+                  <span class="onoffswitch2-switch"></span>
+              </label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary save-btn" data-dismiss="modal">Save Changes</button>
+        </div>
+      </form>
+      </div>
+      
+    </div>
+  </div>
+   
+  
+</div>
+</div>
+<!--Light-right-->
+<div class="container">
+  <div class="hover-dot hover-dot-light-right" data-toggle="modal" data-target="#myModal3"></div>
+    
+  <!--Light Modal -->
+  <div class="modal fade" id="myModal3" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">BEDROOM(L) RIGHT LAMP</h4>
+          <button type="button" class="close" data-dismiss="modal">×</button>
+
+        </div>
+        <form method="POST" action="/item/save/5d36f7f386e8f620bc611117" data-id="5d36f7f386e8f620bc611117">
+        <div class="modal-body">
+          <p>Switch On / Switch Off</p>
+          <!--Switch-->
+          <div class="onoffswitch2">
+              <input type="hidden" name="switch" value="false"/>
+              <input type="checkbox" name="switch" class="onoffswitch2-checkbox" value="true" id="myonoffswitch23"
+              <% if(getItem('5d36f7f386e8f620bc611117').switch === 'true' ){ %>
+                checked
+                <% } %>
+              >
+              <label class="onoffswitch2-label" for="myonoffswitch23">
+                  <span class="onoffswitch2-inner"></span>
+                  <span class="onoffswitch2-switch"></span>
+              </label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary save-btn" data-dismiss="modal">Save Changes</button>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+   
+</div>
+</div>
+
+<!--Room2 Light-left-->
+<div class="container">
+  <div class="hover-dot hover-dot-room2-lightleft" id="smartdevices" data-toggle="modal" data-target="#myModal4"></div>
+      
+    <!--Light Modal -->
+    <div class="modal fade" id="myModal4" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">         
+            <h4 class="modal-title">BEDROOM(R) LEFT LAMP</h4>
+            <button type="button" class="close" data-dismiss="modal">×</button>
+          </div>
+          <form method="POST" action="/item/save/5d391560601e2b1c90921f6a" data-id="5d391560601e2b1c90921f6a">
+          <div class="modal-body">
+            <p>Switch On / Switch Off </p>
+            <!--Switch-->
+            <div class="onoffswitch2">
+                <input type="hidden" name="switch" value="false"/>
+                <input type="checkbox" name="switch" class="onoffswitch2-checkbox" value="true" id="myonoffswitch24"
+                <% if(getItem('5d391560601e2b1c90921f6a').switch === 'true' ){ %>
+                  checked
+                  <% } %>
+                >
+                <label class="onoffswitch2-label" for="myonoffswitch24">
+                    <span class="onoffswitch2-inner"></span>
+                    <span class="onoffswitch2-switch"></span>
+                </label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary save-btn" data-dismiss="modal">Save Changes</button>
+          </div>
+        </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+ <!--Room2 Light-right-->
+ <div class="container">
+   <div class="hover-dot hover-dot-room2-lightright" id="smartdevices" data-toggle="modal" data-target="#myModal5"></div>
+      
+    <!--Light Modal -->
+    <div class="modal fade" id="myModal5" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">BEDROOM(R) RIGHT LAMP</h4>
+            <button type="button" class="close" data-dismiss="modal">×</button>
+
+          </div>
+          <form method="POST" action="/item/save/5d39188c9f263620d0b73a96" data-id="5d39188c9f263620d0b73a96">
+          <div class="modal-body">
+            <p>Switch On / Switch Off</p>
+            <!--Switch-->
+            <div class="onoffswitch2">
+                <input type="hidden" name="switch" value="false"/>
+                <input type="checkbox" name="switch" class="onoffswitch2-checkbox" value="true" id="myonoffswitch25"
+                <% if(getItem('5d39188c9f263620d0b73a96').switch === 'true' ){ %>
+                  checked
+                  <% } %>
+                >
+                <label class="onoffswitch2-label" for="myonoffswitch25">
+                    <span class="onoffswitch2-inner"></span>
+                    <span class="onoffswitch2-switch"></span>
+                </label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary save-btn" data-dismiss="modal">Save Changes</button>
+          </div>
+        </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+ <!--Room3 Light-left-->
+ <div class="container">
+      <div class="hover-dot hover-dot-room3-light" id="smartdevices" data-toggle="modal" data-target="#myModal6"></div>
+    
+  <!--Light Modal -->
+  <div class="modal fade" id="myModal6" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">BEDROOM(B) LEFT LAMP</h4>
+          <button type="button" class="close" data-dismiss="modal">×</button>
+
+        </div>
+        <form method="POST" action="/item/save/5d3919438079dd02c4669204" data-id="5d3919438079dd02c4669204">
+        <div class="modal-body">
+          <p>Switch On / Switch Off</p>
+          <!--Switch-->
+          <div class="onoffswitch2">
+              <input type="hidden" name="switch" value="false"/>
+              <input type="checkbox" name="switch" class="onoffswitch2-checkbox" value="true" id="myonoffswitch26"
+              <% if(getItem('5d3919438079dd02c4669204').switch === 'true' ){ %>
+                checked
+                <% } %>
+              >
+              <label class="onoffswitch2-label" for="myonoffswitch26">
+                  <span class="onoffswitch2-inner"></span>
+                  <span class="onoffswitch2-switch"></span>
+              </label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary save-btn" data-dismiss="modal">Save Changes</button>
+        </div>
+      </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</div>
+
+<!--Air Conditioner-->
+<div class="container">
+  <div class="hover-dot hover-dot2" id="devices" data-toggle="modal" data-target="#modal-7"></div>
+    <div class="modal fade" id="modal-7" role="dialog">
+    <div class="modal-dialog">
+       <!-- Modal content-->
+        <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title"> AIR CONDITIONER</h4>
+            <button type="button" class="close" data-dismiss="modal">×</button>
+        </div>
+        <form method="POST" action='/item/save/ac/5d36f9073a64080990b2daac' data-id="5d36f9073a64080990b2daac">
+        <div class="modal-body">
+            <p>Switch On / Switch Off</p>
+            <!--Switch-->
+            <div class="onoffswitch2">
+                <input type="hidden" name="switch" value="false"/>
+                <input type="checkbox" name="switch" class="onoffswitch2-checkbox" value="true" id="myonoffswitch30"
+                <% if(getItem('5d36f9073a64080990b2daac').switch === 'true' ){ %>
+                  checked
+                  <% } %>
+                >
+                <label class="onoffswitch2-label" for="myonoffswitch30">
+                    <span class="onoffswitch2-inner"></span>
+                    <span class="onoffswitch2-switch"></span>
+                </label>
+            </div>
+            <p>Set Temperature</p>
+            <!--Switch-->
+            <div class="value-button" id="decrease" value="Decrease Value">-</div>
+            <input type="number" id="number" name="temperature" value="16"/>
+            <div class="value-button" id="increase" value="Increase Value">+</div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-secondary save-btn" data-dismiss="modal">Save Changes</button>
+        </div>
+      </form>
+        </div>
+        
+    </div>
+    </div>
+
+   
+ <!--Television Room 1-->
+ <div class="container">
+    <div class="hover-dot hover-dot2 hover-dot-tv" id="devices" data-toggle="modal" data-target="#modal-8"></div>
+    <div class="modal fade" id="modal-8" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">LOUNGE TV </h4>
+            <button type="button" class="close" data-dismiss="modal">×</button>
+        </div>
+        <form method="POST" action='/item/save/tv/5d3700a3652da01bcc1bd7ea' data-id="5d3700a3652da01bcc1bd7ea">
+        <div class="modal-body">
+            <p>Switch On / Switch Off</p>
+            <!--Switch-->
+            <div class="onoffswitch2">
+                <input type="hidden" name="switch" value="false"/>
+                <input type="checkbox" name="switch" class="onoffswitch2-checkbox" value="true" id="myonoffswitch31"
+                <% if(getItem('5d3700a3652da01bcc1bd7ea').switch === 'true' ){ %>
+                  checked
+                  <% } %>
+                >
+                <label class="onoffswitch2-label" for="myonoffswitch31">
+                    <span class="onoffswitch2-inner"></span>
+                    <span class="onoffswitch2-switch"></span>
+                </label>
+            </div>
+            <!--Volume Switch-->
+            <p>Set Volume</p>
+            <p>
+                <img src="http://i.imgur.com/yOadS1c.png" id="minus1" width="20" height="20" class="minus"/>
+                <input id="qty1" type="text" value="12" name="volume" class="qty"/>
+                    <img id="add1" src="http://i.imgur.com/98cvZnj.png" width="20" height="20" class="add"/>
+            </p>
+            <p>Set Channel</p>
+            <p>
+                <img src="http://i.imgur.com/yOadS1c.png" id="minus2" width="20" height="20" class="minus"/>
+                <input id="qty2" type="text" name="channel" value="17" class="qty"/>
+                <img id="add2" src="http://i.imgur.com/98cvZnj.png" width="20" height="20" class="add"/>
+            </p> 
+          </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-secondary save-btn" data-dismiss="modal">Save Changes</button>
+        </div>
+        </form>
+        </div>
+        
+    </div>
+    </div>
+<!-- Television Room 2 -->
+<div class="container">
+<div class="hover-dot  hover-dot-room2-tv" id="devices" data-toggle="modal" data-target="#modal-9"></div> -->
+
+<!--Light Modal -->
+<div class="hover-dot hover-dot2 hover-dot-tv" id="devices" data-toggle="modal" data-target="#modal-9"></div>
+<div class="modal fade" id="modal-9" role="dialog">
+<div class="modal-dialog">
+  <!-- Modal content-->
+  <div class="modal-content">
+  <div class="modal-header">
+      <h4 class="modal-title">BEDROOM(R) TV</h4>
+      <button type="button" class="close" data-dismiss="modal">×</button>
+  </div>
+  <form method="POST" action='/item/save/tv/5d39386170463317e8c1bea8' data-id="5d39386170463317e8c1bea8">
+  <div class="modal-body">
+      <p>Switch On / Switch Off</p>
+      <!--Switch-->
+      <div class="onoffswitch2">
+          <input type="hidden" name="switch" value="false"/>
+          <input type="checkbox" name="switch" class="onoffswitch2-checkbox" value="true" id="myonoffswitch32" 
+          <% if(getItem('5d39386170463317e8c1bea8').switch === 'true' ){ %>
+            checked
+            <% } %>
+          >
+          <label class="onoffswitch2-label" for="myonoffswitch32">
+              <span class="onoffswitch2-inner"></span>
+              <span class="onoffswitch2-switch"></span>
+          </label>
+      </div>
+      <!--Volume Switch-->
+      <p>Set Volume</p>
+      <p>
+          <img src="http://i.imgur.com/yOadS1c.png" id="minus1" width="20" height="20" class="minus"/>
+          <input id="qty1" type="text" value="12" name="volume" class="qty"/>
+              <img id="add1" src="http://i.imgur.com/98cvZnj.png" width="20" height="20" class="add"/>
+      </p>
+      <p>Set Channel</p>
+      <p>
+          <img src="http://i.imgur.com/yOadS1c.png" id="minus2" width="20" height="20" class="minus"/>
+          <input id="qty2" type="text" name="channel" value="17" class="qty"/>
+          <img id="add2" src="http://i.imgur.com/98cvZnj.png" width="20" height="20" class="add"/>
+      </p> 
+    </div>
+  <div class="modal-footer">
+      <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      <button type="submit" class="btn btn-secondary save-btn" data-dismiss="modal">Save Changes</button>
+  </div>
+  </form>
+  </div>
+  
+</div>
+</div>
+
+   <!--Speaker -->
+   <div class="container">
+    <div class="hover-dot hover-dot-laptop" data-toggle="modal" data-target="#modal-10"></div>
+    <div class="modal fade" id="modal-10" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">BEDROOM SONOS</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <form method="POST" class="song" action='/item/save/sono/5d36fb9460b5a61e5cf51142'
+            data-id="5d36fb9460b5a61e5cf51142">
+            <div class="modal-body">
+              <p>Switch On / Switch Off</p>
+              <!--Switch-->
+              <div class="onoffswitch">
+                <input type="hidden" name="switch" value="false" />
+                <input type="checkbox" name="switch" class="onoffswitch-checkbox" value="true" id="myonoffswitch34">
+                <button id="toggleCarousel" type="botton"><i class="fa fa-pause"></i></button>
+                <span id="playing">playing</span>
+              </div>
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-secondary save-btn speaker" data-dismiss="modal">Save
+                Changes</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  let item;
+
+  $(document).ready(function () {
+// Sonos..
+    /* Play trigger */
+    $('#toggleCarousel').click(function (e) {
+      e.preventDefault();
+      if ($('#playing').text() == 'playing') {
+        $.ajax({
+          url: 'http://localhost:5005/living%20room/play/',
+          type: 'GET',
+          success: function (data) {
+            if (data.status == "success") {
+              $(e.target).toggleClass('fa-play fa-pause');
+              $('#playing').text('paused');
+            } else {
+              alert('Error updating Sonos status.');
+            }
+          },
+          error: function (jqXHR, exception) {
+            alert('Error updating Sonos status.');
+          }
+        });
+      }
+      else {
+        $.ajax({
+          url: 'http://localhost:5005/living%20room/pause/',
+          type: 'GET',
+          success: function (data) {
+            if (data.status == "success") {
+              $(e.target).toggleClass('fa-play fa-pause');
+              $('#playing').text('playing');
+            }
+            else {
+              alert('Error updating Sonos status.');
+            }
+          },
+          error: function (jqXHR, exception) {
+            alert('Error updating Sonos status.');
+          }
+        });
+      }
+    });
+
+   // Switches
+   $('.save-btn').click(function(e) {
+              const frm = $(e.target).closest("form");
+                e.preventDefault();
+                $.ajax({
+                url: frm.attr('action') ,
+                type: 'POST',
+                data: frm.serialize(),
+                });
+            });
+
+            const socket = io.connect('http://localhost:7860');
+            const btn = $('.save-btn');
+            item = $('.onoffswitch2-checkbox');
+            btn.click(function(e){
+              const frm = $(e.target).closest("form");
+              socket.emit('status',{
+                deviceId:$(e.target).closest("form").data('id'),
+                item: frm.serialize(),
+              });
+            });
+            socket.on('status', function(data){
+          $('[data-id="'+data.deviceId+'"]');
+          function qToArr(q)
+          {
+              q = decodeURIComponent((q).replace(/\+/g, '%20'));
+              arr = {};
+              var a = q.split(/&(?!amp;)/g);
+              for (x in a)
+              {
+                  var pair = a[x].split('=');
+                  arr[pair[0]] = pair[1];
+              }
+              return arr;
+          }
+
+          const itemData = qToArr(data.item);
+          if(itemData.switch=="true"){
+            console.log(data.deviceId);
+            $("[data-id='"+data.deviceId+"']").find("[name='switch'][type='checkbox']").prop('checked','checked');
+          }else{
+            $("[data-id='"+data.deviceId+"']").find("[name='switch'][type='checkbox']").removeAttr('checked');
+          }
+          if(itemData.temperature!=undefined){
+            $("[data-id='"+data.deviceId+"']").find("[name='temperature'][type='number']").prop('val()','itemData.temperature');
+
+          }
+          if(itemData.volume!=undefined){
+            $("[data-id='"+data.deviceId+"']").find("[name='volume'][type='number']").prop('val()','itemData.volume');
+          }
+
+          if(itemData.channel!=undefined){
+            $("[data-id='"+data.deviceId+"']").find("[name='channel'][type='number']").prop('val()','itemData.channel');
+          }
+             });
+  });
+</script>
+
+  
+<% include footer.ejs %>

@@ -9,7 +9,6 @@ router.get('/', function(req, res, next) {
   });
 
 router.post('/form', function(req,res,next){
-  // res.render('contact', { title: 'Smart' })
-  res.send('OK');
+  res.end('OK');
 });
 module.exports = router;

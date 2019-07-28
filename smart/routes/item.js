@@ -11,22 +11,15 @@ const AC = require('../app/models/cooler_model');
 const Speaker = require('../app/models/speaker_model')
 
 router.post('/save/:id', function (req, res) {
-    console.log('saved successfully!!!!');
-    console.log(req.params);
-    console.log(req.body);
     console.log(typeof 'switch');
     if(!req.body.switch){
       res.send('Incomplete form values')
     }
-
     let item = req.body.switch;
-
     if(Array.isArray(item)){
       item = item.pop();
-    }
-      
+    } 
     Switch.findByIdAndUpdate(req.params.id, {
-      // name : req.body.name,
       switch: item
     }, { new: true, useFindAndModify: false }, (err) => {
       if (err) throw (err);
@@ -48,7 +41,6 @@ router.post('/save/:id', function (req, res) {
       item = item.pop();
     }
     AC.findByIdAndUpdate(req.params.id, {
-      // name : req.body.name,
       switch: item,
       temperature : req.body.temperature 
     }, { new: true, useFindAndModify: false }, (err) => {
@@ -57,7 +49,6 @@ router.post('/save/:id', function (req, res) {
   })
 
   router.post('/save/tv/:id',function(req, res){
-  console.log('saved successfully!!!!')
   if(!req.body.switch){
     res.send('Incomplete form values')
   }
@@ -78,7 +69,6 @@ router.post('/save/:id', function (req, res) {
   });
 
   router.post('/save/sono/:id',function(req, res){
-    console.log('saved successfully!!!!')
   if(!req.body.switch){
     res.send('Incomplete form values')
   }
@@ -88,7 +78,6 @@ router.post('/save/:id', function (req, res) {
     item = item.pop();
   }
     Speaker.findByIdAndUpdate(req.params.id, {
-     // name : req.body.name,
       switch: item,
       volume : req.body.volume,
     }, { new: true, useFindAndModify: false }, (err) => {
@@ -97,3 +86,4 @@ router.post('/save/:id', function (req, res) {
   })
 
   module.exports = router;
+
